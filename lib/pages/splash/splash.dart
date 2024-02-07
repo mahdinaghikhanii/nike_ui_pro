@@ -1,4 +1,6 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:nike/pages/home/home.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -24,7 +26,8 @@ class SplashPage extends StatelessWidget {
             height: 54,
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
-                onPressed: () {},
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const HomePages())),
                 child: const Center(
                   child: Text(
                     "Get Started",
@@ -43,11 +46,15 @@ class SplashPage extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(right: 20),
-                child: Image.asset(
-                  "assets/splash.png",
-                  fit: BoxFit.cover,
-                  height: 390,
-                  width: 390,
+                child: FadeInRight(
+                  delay: const Duration(microseconds: 300),
+                  duration: const Duration(seconds: 2),
+                  child: Image.asset(
+                    "assets/splash.png",
+                    fit: BoxFit.cover,
+                    height: 390,
+                    width: 390,
+                  ),
                 ),
               ),
               const Padding(

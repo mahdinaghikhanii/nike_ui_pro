@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nike/pages/detail/detail.dart';
 
 class HomePages extends StatelessWidget {
   const HomePages({super.key});
@@ -78,45 +79,52 @@ class HomePages extends StatelessWidget {
                             color: Colors.grey.shade100),
                         height: 209,
                         width: 170,
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        Icons.star_outline,
+                        child: InkWell(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailPage())),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.star_outline,
+                                          color: Colors.grey.shade600,
+                                        ),
+                                        const SizedBox(width: 6),
+                                        Text("4.8",
+                                            style: TextStyle(
+                                                color: Colors.grey.shade600,
+                                                fontWeight: FontWeight.w600))
+                                      ],
+                                    ),
+                                    Icon(Icons.bookmark_outline,
+                                        color: Colors.grey.shade600)
+                                  ],
+                                ),
+                                const SizedBox(height: 20),
+                                Image.asset("assets/shoes.png",
+                                    height: 80, width: 140),
+                                const SizedBox(height: 15),
+                                Text("Nike Legend",
+                                    style: TextStyle(
                                         color: Colors.grey.shade600,
-                                      ),
-                                      const SizedBox(width: 6),
-                                      Text("4.8",
-                                          style: TextStyle(
-                                              color: Colors.grey.shade600,
-                                              fontWeight: FontWeight.w600))
-                                    ],
-                                  ),
-                                  Icon(Icons.bookmark_outline,
-                                      color: Colors.grey.shade600)
-                                ],
-                              ),
-                              const SizedBox(height: 20),
-                              Image.asset("assets/shoes.png"),
-                              const SizedBox(height: 15),
-                              Text("Nike Legend",
-                                  style: TextStyle(
-                                      color: Colors.grey.shade600,
-                                      fontWeight: FontWeight.w600)),
-                              const SizedBox(height: 2),
-                              Text("\$290.00",
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.grey.shade900,
-                                      fontWeight: FontWeight.w600))
-                            ]));
+                                        fontWeight: FontWeight.w600)),
+                                const SizedBox(height: 2),
+                                Text("\$290.00",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.grey.shade900,
+                                        fontWeight: FontWeight.w600))
+                              ]),
+                        ));
                   }),
             )
           ]),

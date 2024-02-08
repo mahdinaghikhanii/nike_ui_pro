@@ -48,7 +48,7 @@ class SplashPage extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 20),
                 child: FadeInRight(
                   delay: const Duration(microseconds: 300),
-                  duration: const Duration(seconds: 2),
+                  duration: const Duration(seconds: 3),
                   child: Image.asset(
                     "assets/splash.png",
                     fit: BoxFit.cover,
